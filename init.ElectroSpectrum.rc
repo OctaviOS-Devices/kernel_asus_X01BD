@@ -15,7 +15,7 @@ on property:sys.boot_completed=1
     chmod 0644 /sys/devices/system/cpu/cpufreq/policy0/*
     chmod 0644 /sys/devices/system/cpu/cpufreq/policy4/*
     chmod 0644 /sys/block/mmcblk0/queue/*
-    # chonw
+    # chown
     chown system system /sys/devices/system/cpu/cpufreq/policy0/*
     chown system system /sys/devices/system/cpu/cpufreq/policy4/*
     chown system system /sys/block/mmcblk0/queue/*
@@ -27,7 +27,7 @@ on property:sys.post_boot.parsed=1
     chmod 0644 /sys/devices/system/cpu/cpufreq/policy0/*
     chmod 0644 /sys/devices/system/cpu/cpufreq/policy4/*
     chmod 0644 /sys/block/mmcblk0/queue/*
-    # chonw
+    # chown
     chown system system /sys/devices/system/cpu/cpufreq/policy0/*
     chown system system /sys/devices/system/cpu/cpufreq/policy4/*
     chown system system /sys/block/mmcblk0/queue/*
@@ -152,7 +152,7 @@ on property:persist.spectrum.profile=0
     chmod 0644 /sys/devices/system/cpu/cpufreq/policy4/cpuinfo_max_freq
     write /sys/devices/system/cpu/cpufreq/policy4/cpuinfo_max_freq "2208000"
     ## Big gov Setting
-    chonw system system /sys/devices/system/cpu/cpufreq/policy4/interactive/*
+    chown system system /sys/devices/system/cpu/cpufreq/policy4/interactive/*
     chmod 0644 /sys/devices/system/cpu/cpufreq/policy4/interactive/*
     write /sys/devices/system/cpu/cpufreq/policy4/interactive/target_loads "90 300000:43 633600:62 921600:74 1113600:76 1401600:78 1747200:80 1958400:82 2150400:83 2208000:99"
     write /sys/devices/system/cpu/cpufreq/policy4/interactive/above_hispeed_delay "32000 300000:50000 633600:60000 921600:75000 1401600:80000 2150400:100000 2208000:150000"

@@ -42,7 +42,7 @@ DEVICE="X01BD"
 
 # The defconfig which should be used. Get it from config.gz from
 # your device or check source
-DEFCONFIG=X01BD_defconfig
+DEFCONFIG=ElectroPerf_defconfig
 
 # Show manufacturer info
 MANUFACTURERINFO="ASUSTek Computer Inc."
@@ -220,7 +220,7 @@ gen_zip() {
 		mv "$KERNEL_DIR"/out/arch/arm64/boot/dtbo.img AnyKernel3/dtbo.img
 	fi
 	cd AnyKernel3 || exit
-	cp -af "$KERNEL_DIR"/kunmun.sh init.spectrum.rc && sed -i "s/persist.spectrum.kernel.*/persist.spectrum.kernel $KName/g" init.spectrum.rc
+	cp -af "$KERNEL_DIR"/init.ElectroSpectrum.rc init.spectrum.rc && sed -i "s/persist.spectrum.kernel.*/persist.spectrum.kernel $KName/g" init.spectrum.rc
         cp -af anykernel-real.sh anykernel.sh
 	zip -r9 "$ZIPNAME" * -x .git README.md anykernel-real.sh .gitignore *.zip
 
